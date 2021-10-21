@@ -4,9 +4,7 @@ FROM node:14.17.6-alpine3.11
 ENV NODE_ENV production
 
 # create the directory inside the container
-WORKDIR /usr/src/app
-USER node
-COPY --chown=node:node . /usr/src/app
+WORKDIR /app
 
 # copy the package.json files from local machine to the workdir in container
 COPY package*.json ./
@@ -18,7 +16,7 @@ RUN npm ci --only=production
 COPY . .
 
 # our app is running on port 5000 within the container, so need to expose it
-EXPOSE 5000
+EXPOSE 3000
 
 # the command that starts our app
 CMD ["dumb-init", "node", "index.js"]
