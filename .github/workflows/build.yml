@@ -58,4 +58,4 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          script: deploy.sh
+          script: bash deploy.sh
