@@ -30,6 +30,7 @@ jobs:
       - run: npm test
 
   docker:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -50,6 +51,7 @@ jobs:
           push: true
           tags: atxpaul/test-tdd:latest
   deploy:
+    needs: docker
     runs-on: ubuntu-latest
     steps:
       - name: executing remote ssh commands using password
