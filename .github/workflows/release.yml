@@ -37,9 +37,15 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push
+      - name: Build and push version
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
           tags: atxpaul/test-tdd:${{ github.event.release.tag_name }}
+      - name: Build and push latest
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: atxpaul/test-tdd:latest
