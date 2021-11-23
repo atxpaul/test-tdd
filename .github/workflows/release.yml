@@ -42,4 +42,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: atxpaul/test-tdd:${{ github.event.release.tag_name }} atxpaul/test-tdd:latest
+          tags: atxpaul/test-tdd:${{ github.event.release.tag_name }}, atxpaul/test-tdd:latest
