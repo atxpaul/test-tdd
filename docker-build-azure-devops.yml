@@ -28,4 +28,4 @@ stages:
         Dockerfile: '**/Dockerfile'
         tags: |-
           $(tag)
-          $(Build.Source.Version)
+          $(Build.SourceVersion	)
