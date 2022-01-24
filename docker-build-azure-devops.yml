@@ -26,6 +26,7 @@ stages:
         repository: 'test-tdd-azure-devops'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
-        tags: |-
+        tags: |
           $(tag)
           $(Build.SourceVersion)
+          latest
