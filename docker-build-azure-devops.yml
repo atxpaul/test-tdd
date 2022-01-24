@@ -23,7 +23,7 @@ stages:
     - task: Docker@2
       inputs:
         containerRegistry: 'Docker Hub'
-        repository: 'test-tdd-azure-devops'
+        repository: 'atxpaul/test-tdd-azure-devops'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
         tags: |
